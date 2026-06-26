@@ -27,7 +27,8 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal = "ghostty"
-local fileManager = terminal .. " -e yazi"
+local fileManager = terminal
+	.. ' --class=fzf-filemanager -e bash -c \'file=$(find ~ -maxdepth 3 2>/dev/null | fzf --height=100%); [ -n "$file" ] && xdg-open "$file"\''
 local menu = "hyprlauncher"
 
 -------------------
